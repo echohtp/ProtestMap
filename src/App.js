@@ -5,6 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import ProtestMap from './components/ProtestMap';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-166878616-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 class App extends Component {
 
   constructor(params) {
