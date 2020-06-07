@@ -10,7 +10,7 @@ class App extends Component {
   constructor(params) {
     super(params)
   this.state = {
-    API: "http://34.67.155.230:5000/",
+    API: "https://3ae6913169f7.ngrok.io",
     markers: [],
     markerShow: []
   }    
