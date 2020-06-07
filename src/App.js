@@ -10,7 +10,7 @@ class App extends Component {
   constructor(params) {
     super(params)
   this.state = {
-    API: "http://localhost:5000",
+    API: "http://34.67.155.230:5000/",
     markers: [],
     markerShow: []
   }    
