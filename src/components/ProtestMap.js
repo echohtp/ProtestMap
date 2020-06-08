@@ -43,7 +43,7 @@ class ProtestMap extends Component {
                     <button className="btn btn-primary">Add event</button> */}
                     <a href="https://twitter.com/0xbanana" target="_blank"><img className="img-fluid" style={{height: "64px"}} src="https://media.tenor.com/images/09810950a6f4253604b28436264a5669/tenor.gif"/></a>
                   </div>
-                 <Map provider={mapTilerProvider} center={[0,0]} zoom={5}>
+                 <Map provider={mapTilerProvider} center={[39.50,-98.35]} zoom={5}>
 
                   {/* <Cluster>
                 {
