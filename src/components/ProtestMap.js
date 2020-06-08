@@ -29,7 +29,11 @@ class ProtestMap extends Component {
       })
 
       const markers = this.props.markers.map((f,idx) => {return( <Marker key={Math.random()} anchor={f['loc']} payload={idx} onClick={({ event, anchor, payload }) => {
-          console.log('click')
+          this.props.ReactGA.event({
+            category: "UI Event",
+            action: "Open/Close Marker(Tweet)",
+            value: parseInt(f['id'])
+          })
           this.props.showMarker(payload)
 
         }} /> )} )
