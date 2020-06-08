@@ -1,9 +1,8 @@
-import tweepy
-from json import loads, dumps
+# from json import loads, dumps
 import firebase_admin
 from firebase_admin import credentials
 from google.cloud import firestore
-
+import tweepy
 # # Use the application default credentials
 # cred = credentials.ApplicationDefault()
 # firebase_admin.initialize_app(cred, {
@@ -30,7 +29,12 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
-public_tweets = api.search(q="#protestMap2020", count=100, result_type="recent", wait_on_rate_limit=True)
+public_tweets = api.search(
+    q="#protestMap2020",
+    count=100,
+    result_type="recent",
+    wait_on_rate_limit=True)
+
 for tweet in public_tweets:
     # print(tweet._json)
 
@@ -40,20 +44,23 @@ for tweet in public_tweets:
         print(tw._json['entities']['urls'])
         try:
             db.collection(u'tweets').document(tweet._json['id_str']).set({
-                "id": tweet._json['in_reply_to_status_id_str'], 
+                "id": tweet._json['in_reply_to_status_id_str'],
                 "text": tweet._json['text'],
                 "geo": "(" + tweet._json['text'].split('(')[1],
-                "url":  "https://twitter.com/" + tw._json['user']['screen_name'] + "/status/"  + tw._json['id_str']
-             })
+                "url":  "https://twitter.com/" +
+                        tw._json['user']['screen_name'] +
+                        "/status/" +
+                        tw._json['id_str']
+                })
         except IndexError:
             db.collection(u'review').document(tweet._json['id_str']).set({
-                "id": tweet._json['in_reply_to_status_id_str'], 
+                "id": tweet._json['in_reply_to_status_id_str'],
                 "text": tweet._json['text'],
                 "geo": "(" + tweet._json['text'].split('(')[1]
             })
-if ( len(public_tweets) > 0 ):
+if len(public_tweets) > 0:
     latest_id = public_tweets[-1]._json['id_str']
 
 
 print("Latest id: ", latest_id)
-print("tweets count: " , len(tweets) )
+print("tweets count: ", len(tweets))
