@@ -28,7 +28,12 @@ class ProtestMap extends Component {
             </Overlay>)
       })
 
+      const markers = this.props.markers.map((f,idx) => {return( <Marker key={Math.random()} anchor={f['loc']} payload={idx} onClick={({ event, anchor, payload }) => {
+          console.log('click')
+          this.props.showMarker(payload)
 
+        }} /> )} )
+  
         return (
             <div className="mapWrapper">
                   <div className="buttonWrapper">
@@ -40,20 +45,16 @@ class ProtestMap extends Component {
                   </div>
                  <Map provider={mapTilerProvider} center={[0,0]} zoom={5}>
 
-                  <Cluster>
+                  {/* <Cluster>
                 {
                     this.props.markers.map((f,idx) => <Marker key={Math.random()} anchor={f['loc']} payload={idx} onClick={({ event, anchor, payload }) => {
                       console.log('click')
                       this.props.showMarker(payload)
-          
-            //           console.log(idx)
-            //           let ts = this.state.markerShow
-            // ts[payload] = !ts[payload]
-            // this.setState({markerShow: ts })
             return(0)
                     }} />)
                 }
-                </Cluster>
+                </Cluster> */}
+                                {markers}
                                 {overlays}
 
     
