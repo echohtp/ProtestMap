@@ -47,7 +47,7 @@ componentDidMount() {
 render(){
   return (
     <div className="wrapper">
-      <ProtestMap showMarker={this.showMarker} markers={this.state.markers} markerShow={this.state.markerShow}/>
+      <ProtestMap ReactGA={ReactGA} showMarker={this.showMarker} markers={this.state.markers} markerShow={this.state.markerShow}/>
     </div>
     );
 }
