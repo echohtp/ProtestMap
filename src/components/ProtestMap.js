@@ -36,7 +36,7 @@ class ProtestMap extends Component {
                     <input type="text" placeholder="twitter link"/>
                     <br/>
                     <button className="btn btn-primary">Add event</button> */}
-                    <a href="https://twitter.com/0xbanana"><img className="img-fluid" style={{height: "125px"}} src="https://media.tenor.com/images/09810950a6f4253604b28436264a5669/tenor.gif"/></a>
+                    <a href="https://twitter.com/0xbanana"><img className="img-fluid" style={{height: "64px"}} src="https://media.tenor.com/images/09810950a6f4253604b28436264a5669/tenor.gif"/></a>
                   </div>
                  <Map provider={mapTilerProvider} center={[0,0]} zoom={5}>
 
