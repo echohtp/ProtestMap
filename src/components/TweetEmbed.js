@@ -8,7 +8,7 @@ function TweetEmbed(props) {
     return (
         <div>
             <blockquote className="twitter-tweet">
-      <a href={url}>THIS IS WHERE THE TWEET GOES</a>
+      <a href={url}>&nbsp;</a>
       </blockquote>
       <ScriptTag async type="text/javascript" src="https://platform.twitter.com/widgets.js" charSet="utf-8" /> 
         </div>
