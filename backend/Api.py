@@ -1,14 +1,13 @@
-from flask import Flask
-from flask_cors import CORS
-
 import threading
 from json import dumps
-app = Flask(__name__)
-CORS(app)
-
+from flask import Flask
+from flask_cors import CORS
 import firebase_admin
 from firebase_admin import credentials
 from google.cloud import firestore
+
+app = Flask(__name__)
+CORS(app)
 
 cred = credentials.Certificate('./usprotest-map-f61aff22d908.json')
 firebase_admin.initialize_app(cred)
@@ -27,4 +26,4 @@ print(markers)
 
 @app.route('/get/markers')
 def get_markers():
-    return(dumps(markers))
+    return dumps(markers)
