@@ -22,9 +22,17 @@ class App extends Component {
 
   showMarker(idx){
     console.log('app: ',idx)
-    let ar = new Array(this.state.markerShow.length).fill(false)
 
-    ar[idx] = !ar[idx]
+    let ar;
+    if (this.state.markerShow[idx])
+    {
+      ar = this.state.markerShow
+      ar[idx] = false
+    }else{
+    ar = new Array(this.state.markerShow.length).fill(false)
+
+    ar[idx] = true
+    }
     this.setState({markerShow: ar})
   }
 
