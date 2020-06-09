@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
 import ProtestMap from './components/ProtestMap';
 import ReactGA from 'react-ga';
+
 ReactGA.initialize('UA-166878616-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -23,7 +22,8 @@ class App extends Component {
 
   showMarker(idx){
     console.log('app: ',idx)
-    let ar = this.state.markerShow
+    let ar = new Array(this.state.markerShow.length).fill(false)
+
     ar[idx] = !ar[idx]
     this.setState({markerShow: ar})
   }
