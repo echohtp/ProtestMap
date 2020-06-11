@@ -46,9 +46,8 @@ class ProtestMap extends Component {
                   </div>
                  <Map provider={mapTilerProvider} center={[39.50,-98.35]} zoom={5}>
 
-                            <Cluster>
+                            
                                 {markers}
-</Cluster>
                                 {overlays}
 
     
