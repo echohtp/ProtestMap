@@ -41,24 +41,14 @@ class ProtestMap extends Component {
         return (
             <div className="mapWrapper">
                   <div className="buttonWrapper">
-          {/* <input type="text" placeholder="lat,lng"/><br/>                  
-                    <input type="text" placeholder="twitter link"/>
-                    <br/>
-                    <button className="btn btn-primary">Add event</button> */}
-                    <a href="https://twitter.com/0xbanana" target="_blank"><img className="img-fluid" style={{height: "64px"}} src="https://media.tenor.com/images/09810950a6f4253604b28436264a5669/tenor.gif"/></a>
+         
+                    <a href="https://twitter.com/0xbanana" target="_blank"><img className="img-fluid" style={{height: "64px"}} src="https://image.flaticon.com/icons/png/128/2990/2990510.png"/></a>
                   </div>
                  <Map provider={mapTilerProvider} center={[39.50,-98.35]} zoom={5}>
 
-                  {/* <Cluster>
-                {
-                    this.props.markers.map((f,idx) => <Marker key={Math.random()} anchor={f['loc']} payload={idx} onClick={({ event, anchor, payload }) => {
-                      console.log('click')
-                      this.props.showMarker(payload)
-            return(0)
-                    }} />)
-                }
-                </Cluster> */}
+                            <Cluster>
                                 {markers}
+</Cluster>
                                 {overlays}
 
     
