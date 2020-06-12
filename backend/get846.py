@@ -5,8 +5,8 @@ from google.cloud import firestore
 
 
 
-cred = credentials.Certificate('./usprotest-map-f61aff22d908.json')
-firebase_admin.initialize_app(cred)
+#cred = credentials.Certificate('./usprotest-map-f61aff22d908.json')
+#firebase_admin.initialize_app(cred)
 
 db = firestore.Client()
 
@@ -19,7 +19,11 @@ for incident in api_data.json()['data']:
     t_obj['geo'] = "({lat},{lng})".format(lat=incident["geocoding"]["lat"],lng=incident["geocoding"]["long"])
     t_obj['links'] = incident["links"]
     t_obj["text"] = incident["title"]
-    
+    t_obj["city"] = incident["city"]
+    t_obj["state"] = incident["state"]
+    t_obj["date"] = incident["date"]
+
+
     
     if ([t_obj for t_obj in t_obj['links'] if "twitter" in t_obj]):
         for link in t_obj["links"]:
