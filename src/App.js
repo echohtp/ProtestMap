@@ -3,7 +3,9 @@ import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import ProtestMap from './components/ProtestMap';
+import PersistentDrawerRight  from './components/TweetDrawer';
 import ReactGA from 'react-ga';
+
 
 ReactGA.initialize('UA-166878616-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
@@ -15,7 +17,8 @@ class App extends Component {
   this.state = {
     API: "https://3ae6913169f7.ngrok.io",
     markers: [],
-    markerShow: []
+    markerShow: [],
+    showContent: ""
   }    
   this.showMarker =this.showMarker.bind(this)
   }
@@ -33,7 +36,7 @@ class App extends Component {
 
     ar[idx] = true
     }
-    this.setState({markerShow: ar})
+    this.setState({markerShow: ar, showContent: this.state.markers[idx]})
   }
 
 

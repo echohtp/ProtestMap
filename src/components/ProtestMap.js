@@ -5,6 +5,7 @@ import Marker from 'pigeon-marker'
 import Overlay from 'pigeon-overlay'
 import TweetEmbed from './TweetEmbed'
 import Cluster from 'pigeon-cluster'
+import PersistentDrawerRight from './TweetDrawer';
 
 const MAPTILER_ACCESS_TOKEN = '7XKf5hhH4AJj5eCTMhtT'
 const MAP_ID = 'basic'
@@ -52,6 +53,7 @@ class ProtestMap extends Component {
 
     
   </Map>
+  
             </div>
         );
   }
